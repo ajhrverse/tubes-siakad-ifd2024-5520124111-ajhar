@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Dosen extends Model{
+
+  protected $table = 'dosen';
+
+    protected $primaryKey = 'nidn';
+
+    public $incrementing = false;
+
+    protected $keyType = 'string';
+
+    protected $fillable = [
+        'nidn',
+        'nama'
+    ];
+
+  public function mahasiswa()
+    {
+    return $this->hasMany(Mahasiswa::class,'nidn_dosen','nidn');
+    }
+
+    public function jadwal()
+    {
+    return $this->hasMany(Jadwal::class,'nidn_dosen','nidn');
+    }
+    public function getRouteKeyName()
+    {
+        return 'nidn';
+    }
+}
