@@ -25,7 +25,7 @@ class KrsController extends Controller
             ->get();
 
         return view(
-            'mahasiswa.krs.index',
+            'admin.mahasiswa.krs.index',
             compact(
                 'matakuliah',
                 'krs'
@@ -33,25 +33,41 @@ class KrsController extends Controller
         );
     }
 
-    public function store(Request $request)
-    {
-        $mahasiswa = auth()
-            ->user()
-            ->mahasiswa;
+   public function store(Request $request)
+{
+    $request->validate([
+        'kode_mk' => 'required|exists:matakuliah,kode_mk'
+    ]);
 
-        Krs::firstOrCreate([
-            'npm_mahasiswa' => $mahasiswa->npm,
-            'kode_mk' => $request->kode_mk,
-            'tahun_akademik' => '2025/2026'
-        ]);
+    $mahasiswa = auth()->user()->mahasiswa;
 
-        return back();
-    }
+    Krs::firstOrCreate([
+        'npm_mahasiswa' => $mahasiswa->npm,
+        'kode_mk' => $request->kode_mk,
+        'tahun_akademik' => '2025/2026'
+    ]);
+
+    return back()->with(
+        'success',
+        'Mata kuliah berhasil diambil.'
+    );
+}
 
     public function destroy(Krs $krs)
-    {
-        $krs->delete();
-
-        return back();
+{
+//     dd(
+//     $krs->npm_mahasiswa,
+//     auth()->user()->mahasiswa->npm
+// );
+    if ($krs->npm_mahasiswa != auth()->user()->mahasiswa->npm) {
+        abort(403);
     }
+
+    $krs->delete();
+
+    return back()->with(
+        'success',
+        'Mata kuliah berhasil dihapus.'
+    );
+}
 }

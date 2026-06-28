@@ -16,12 +16,12 @@
                 Data Jadwal
             </h2>
 
-            <a href="{{ route('jadwal.create') }}"
+            <!-- <a href="{{ route('jadwal.create') }}"
                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
 
                 Tambah Jadwal
 
-            </a>
+            </a> -->
 
         </div>
 
@@ -36,7 +36,7 @@
                     <th class="p-3">Kelas</th>
                     <th class="p-3">Hari</th>
                     <th class="p-3">Jam</th>
-                    <th class="p-3">Aksi</th>
+                    <!-- <th class="p-3">Aksi</th> -->
 
                 </tr>
 
@@ -68,16 +68,16 @@
                         {{ $jadwal->jam }}
                     </td>
 
-                    <td class="p-3 flex gap-2">
+                    <!-- <td class="p-3 flex gap-2">
 
                         <a href="{{ route('jadwal.edit',$jadwal) }}"
                            class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded">
 
                             Edit
 
-                        </a>
+                        </a> -->
 
-                        <form
+                        <!-- <form
                             action="{{ route('jadwal.destroy',$jadwal) }}"
                             method="POST">
 
@@ -92,7 +92,7 @@
 
                             </button>
 
-                        </form>
+                        </form> -->
 
                     </td>
 

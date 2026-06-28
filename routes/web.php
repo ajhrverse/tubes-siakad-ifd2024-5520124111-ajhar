@@ -73,14 +73,18 @@ Route::middleware(['auth'])
              [JadwalController::class,'index']
             )->name('mahasiswa.jadwal');
 
-        Route::resource(
-            'krs',
-            KrsController::class
-        )->except([
-            'create',
-            'edit',
-            'update'
-        ]);
+                    Route::resource(
+                'krs',
+                KrsController::class
+            )
+            ->parameters([
+                'krs' => 'krs'
+            ])
+            ->except([
+                'create',
+                'edit',
+                'update'
+            ]);
      });
 });
 
