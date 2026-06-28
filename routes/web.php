@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MahasiswaController;
-use App\Http\Controllers\MatakuliahController;
+use App\Http\Controllers\MataKuliahController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KrsController;
 
@@ -51,9 +51,9 @@ Route::middleware(['auth'])
             MahasiswaController::class
         );
 
-        Route::resource(
-            'matakuliah',
-            MatakuliahController::class
+       Route::resource(
+        'matakuliah',
+        MataKuliahController::class
         );
 
         Route::resource(

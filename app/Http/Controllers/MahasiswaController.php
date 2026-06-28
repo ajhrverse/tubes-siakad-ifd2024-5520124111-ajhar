@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mahasiswa;
+use App\Models\Dosen;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MahasiswaController extends Controller
@@ -11,7 +14,14 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        return view('admin.mahasiswa.index');
+         $data = Mahasiswa::with('dosen')
+            ->latest()
+            ->paginate(10);
+
+        return view(
+            'admin.mahasiswa.index',
+            compact('data')
+        );
     }
 
     /**
@@ -19,7 +29,12 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        return view('admin.mahasiswa.create');
+        $dosen = Dosen::all();
+
+        return view(
+            'admin.mahasiswa.create',
+            compact('dosen')
+        );
     }
 
     /**
@@ -27,7 +42,26 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'npm' => 'required|unique:mahasiswa,npm',
+            'nidn_dosen' => 'required',
+            'nama' => 'required',
+            'angkatan' => 'required'
+        ]);
+
+        Mahasiswa::create([
+            'npm' => $request->npm,
+            'nidn_dosen' => $request->nidn_dosen,
+            'nama' => $request->nama,
+            'angkatan' => $request->angkatan,
+        ]);
+
+        return redirect()
+            ->route('mahasiswa.index')
+            ->with(
+                'success',
+                'Mahasiswa berhasil ditambahkan'
+            );
     }
 
     /**
@@ -41,24 +75,62 @@ class MahasiswaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Mahasiswa $mahasiswa)
     {
-        return view('admin.mahasiswa.edit');
+         $dosen = Dosen::all();
+
+        return view(
+            'admin.mahasiswa.edit',
+            compact(
+                'mahasiswa',
+                'dosen'
+            )
+        );
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+   public function update(
+        Request $request,
+        Mahasiswa $mahasiswa
+    )
     {
-        //
+        $request->validate([
+            'nidn_dosen' => 'required',
+            'nama' => 'required',
+            'angkatan' => 'required'
+        ]);
+
+        $mahasiswa->update([
+            'nidn_dosen' => $request->nidn_dosen,
+            'nama' => $request->nama,
+            'angkatan' => $request->angkatan,
+        ]);
+
+        return redirect()
+            ->route('mahasiswa.index')
+            ->with(
+                'success',
+                'Data berhasil diupdate'
+            );
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(
+        Mahasiswa $mahasiswa
+    )
     {
-        //
+        $mahasiswa->delete();
+
+        return redirect()
+            ->route('mahasiswa.index')
+            ->with(
+                'success',
+                'Data berhasil dihapus'
+            );
     }
 }

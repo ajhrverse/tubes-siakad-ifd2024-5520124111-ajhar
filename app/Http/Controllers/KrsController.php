@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Krs;
+use App\Models\MataKuliah;
 use Illuminate\Http\Request;
+
 
 class KrsController extends Controller
 {
@@ -12,7 +15,7 @@ class KrsController extends Controller
             ->user()
             ->mahasiswa;
 
-        $matakuliah = MataKuliah::all();
+       $matakuliah = MataKuliah::all();
 
         $krs = Krs::with('matakuliah')
             ->where(

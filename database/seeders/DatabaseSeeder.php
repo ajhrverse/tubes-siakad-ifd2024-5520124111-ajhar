@@ -12,7 +12,7 @@ use App\Models\Mahasiswa;
 use App\Models\MataKuliah;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
-use Spatie\Permission\Exceptions\RoleAlreadyExists;
+
 
 class DatabaseSeeder extends Seeder
 {

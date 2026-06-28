@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Dosen;
 use App\Models\Jadwal;
-use App\Models\Matakuliah;
+use App\Models\MataKuliah;
 use App\Models\Mahasiswa;
 
 class DashboardController extends Controller
@@ -19,7 +19,7 @@ class DashboardController extends Controller
                 [
                     'dosen' => Dosen::count(),
                     'mahasiswa' => Mahasiswa::count(),
-                    'matakuliah' => Matakuliah::count(),
+                    'matakuliah' => MataKuliah::count(),
                     'jadwal' => Jadwal::count(),
                 ]
             );
