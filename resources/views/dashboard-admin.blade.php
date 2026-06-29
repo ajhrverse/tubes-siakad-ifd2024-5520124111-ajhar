@@ -28,7 +28,41 @@
                 <h1>{{ $jadwal }}</h1>
             </div>
 
+            
+
         </div>
+         <!-- Informasi -->
+
+            <div class="mt-8">
+
+                <div class="bg-white rounded-xl shadow p-6">
+
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">
+
+                        Selamat Datang 👋
+
+                    </h3>
+
+                    <p class="text-gray-600 leading-relaxed">
+
+                        Anda login sebagai
+                        <span class="font-semibold text-blue-600">
+                            Administrator
+                        </span>.
+
+                        Gunakan menu navigasi untuk mengelola data
+                        <strong>Dosen</strong>,
+                        <strong>Mahasiswa</strong>,
+                        <strong>Mata Kuliah</strong>,
+                        <strong>Jadwal</strong>,
+                        serta memonitor aktivitas akademik.
+
+                    </p>
+
+                </div>
+
+            </div>
+
 
     </div>
 
