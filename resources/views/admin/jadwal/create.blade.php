@@ -21,6 +21,13 @@ Tambah Jadwal
     name="kode_mk"
     class="w-full border rounded p-2">
 
+    @error('kode_mk')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
+
+
 @foreach($matakuliahs as $mk)
 
 <option value="{{ $mk->kode_mk }}">
@@ -40,6 +47,13 @@ Tambah Jadwal
 <select
     name="nidn_dosen"
     class="w-full border rounded p-2">
+
+    @error('nidn_dosen')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
+
 
 @foreach($dosens as $dosen)
 
@@ -62,6 +76,13 @@ type="text"
 name="kelas"
 class="w-full border rounded p-2">
 
+        @error('kelas')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
+
+
 </div>
 
 <div class="mb-4">
@@ -71,6 +92,13 @@ class="w-full border rounded p-2">
 <select
 name="hari"
 class="w-full border rounded p-2">
+
+@error('hari')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
+
 
 <option>Senin</option>
 <option>Selasa</option>
@@ -91,6 +119,12 @@ class="w-full border rounded p-2">
 type="time"
 name="jam"
 class="w-full border rounded p-2">
+@error('jam')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
+
 
 </div>
 

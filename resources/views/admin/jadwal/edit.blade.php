@@ -23,6 +23,12 @@ method="POST">
 name="kode_mk"
 class="w-full border rounded p-2">
 
+                @error('kode_mk')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
+
 @foreach($matakuliahs as $mk)
 
 <option
@@ -46,6 +52,11 @@ value="{{ $mk->kode_mk }}"
 <select
 name="nidn_dosen"
 class="w-full border rounded p-2">
+                @error('nidn_dosen')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 
 @foreach($dosens as $dosen)
 
@@ -72,6 +83,11 @@ type="text"
 name="kelas"
 value="{{ $jadwal->kelas }}"
 class="w-full border rounded p-2">
+                @error('kelas')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 
 </div>
 
@@ -82,6 +98,11 @@ class="w-full border rounded p-2">
 <select
 name="hari"
 class="w-full border rounded p-2">
+                @error('hari')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 
 @foreach(['Senin','Selasa','Rabu','Kamis','Jumat','Sabtu'] as $hari)
 
@@ -108,6 +129,11 @@ type="time"
 name="jam"
 value="{{ $jadwal->jam }}"
 class="w-full border rounded p-2">
+                @error('jam')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 
 </div>
 

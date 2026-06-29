@@ -7,6 +7,8 @@
             Tambah Dosen
         </h2>
 
+        
+
         <form action="{{ route('dosen.store') }}" method="POST">
             @csrf
 

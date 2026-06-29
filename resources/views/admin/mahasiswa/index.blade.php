@@ -32,7 +32,7 @@
                 <tr>
                     <th class="p-3">NPM</th>
                     <th class="p-3">Nama</th>
-                    <th class="p-3">Dosen PA</th>
+                    <th class="p-3">Dosen</th>
                     <th class="p-3">Angkatan</th>
                     <th class="p-3">Aksi</th>
                 </tr>

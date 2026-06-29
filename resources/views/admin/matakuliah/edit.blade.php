@@ -21,6 +21,11 @@ method="POST">
 value="{{ $matakuliah->kode_mk }}"
 disabled
 class="w-full border rounded p-2">
+                @error('kode_mk')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 </div>
 
 <div class="mb-4">
@@ -30,6 +35,11 @@ type="text"
 name="nama_mk"
 value="{{ $matakuliah->nama_mk }}"
 class="w-full border rounded p-2">
+                @error('nama_mk')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 </div>
 
 <div class="mb-4">
@@ -39,6 +49,11 @@ type="number"
 name="sks"
 value="{{ $matakuliah->sks }}"
 class="w-full border rounded p-2">
+                @error('sks')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 </div>
 
 <div class="mb-4">
@@ -48,6 +63,11 @@ type="number"
 name="semester"
 value="{{ $matakuliah->semester }}"
 class="w-full border rounded p-2">
+                @error('semester')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 </div>
 
 <button

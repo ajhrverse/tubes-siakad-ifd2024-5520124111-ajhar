@@ -8,12 +8,16 @@
             <div class="flex">
 
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo
-                            class="block h-9 w-auto fill-current text-gray-800" />
-                    </a>
-                </div>
+                <div class="flex shrink-0 items-center">
+    <a href="{{ route('dashboard') }}" class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-auto text-slate-900" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+            <path d="M4.14 11.18V17c0 2.21 3.52 4 7.86 4s7.86-1.79 7.86-4v-5.82l-7.86 4.29-7.86-4.29z"/>
+        </svg>
+        
+        <span class="font-bold text-lg text-slate-900 hidden sm:block tracking-wider">SIAKAD</span>
+    </a>
+</div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden sm:flex sm:items-center sm:ms-10 space-x-6">

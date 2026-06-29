@@ -8,6 +8,8 @@
 Tambah Mahasiswa
 </h2>
 
+
+
 <form
 action="{{ route('mahasiswa.store') }}"
 method="POST">
@@ -22,6 +24,11 @@ method="POST">
 type="text"
 name="npm"
 class="w-full border rounded p-2">
+                @error('npm')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 
 </div>
 
@@ -33,16 +40,26 @@ class="w-full border rounded p-2">
 type="text"
 name="nama"
 class="w-full border rounded p-2">
+                @error('nama')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 
 </div>
 
 <div class="mb-4">
 
-<label>Dosen PA</label>
+<label>Dosen</label>
 
 <select
 name="nidn_dosen"
 class="w-full border rounded p-2">
+                @error('nidn_dosen')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 
 @foreach($dosen as $item)
 
@@ -64,6 +81,11 @@ class="w-full border rounded p-2">
 type="number"
 name="angkatan"
 class="w-full border rounded p-2">
+                @error('angkatan')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 
 </div>
 

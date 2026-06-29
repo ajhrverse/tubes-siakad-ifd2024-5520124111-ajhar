@@ -35,6 +35,11 @@ type="text"
 name="nama"
 value="{{ $mahasiswa->nama }}"
 class="w-full border rounded p-2">
+                @error('nama')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 
 </div>
 
@@ -45,6 +50,11 @@ class="w-full border rounded p-2">
 <select
 name="nidn_dosen"
 class="w-full border rounded p-2">
+                @error('nidn_dosen')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 
 @foreach($dosen as $item)
 
@@ -71,6 +81,11 @@ type="number"
 name="angkatan"
 value="{{ $mahasiswa->angkatan }}"
 class="w-full border rounded p-2">
+                @error('angkatan')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 
 </div>
 

@@ -36,6 +36,13 @@
                     value="{{ old('nama', $dosen->nama) }}"
                     class="w-full border rounded p-2">
 
+                    @error('nama')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
+
+
             </div>
 
             <button

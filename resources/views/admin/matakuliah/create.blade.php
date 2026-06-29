@@ -15,19 +15,29 @@ method="POST">
 @csrf
 
 <div class="mb-4">
-<label>Kode MK</label>
+<label>Kode Mata Kuliah</label>
 <input
 type="text"
 name="kode_mk"
 class="w-full border rounded p-2">
+                @error('kode_mk')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 </div>
 
 <div class="mb-4">
-<label>Nama MK</label>
+<label>Nama Mata Kuliah</label>
 <input
 type="text"
 name="nama_mk"
 class="w-full border rounded p-2">
+                @error('nama_mk')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 </div>
 
 <div class="mb-4">
@@ -36,6 +46,11 @@ class="w-full border rounded p-2">
 type="number"
 name="sks"
 class="w-full border rounded p-2">
+                @error('sks')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 </div>
 
 <div class="mb-4">
@@ -44,6 +59,11 @@ class="w-full border rounded p-2">
 type="number"
 name="semester"
 class="w-full border rounded p-2">
+                @error('semester')
+                    <div class="text-red-500 text-sm mt-1">
+                        {{ $message }}
+                    </div>
+                @enderror
 </div>
 
 <button

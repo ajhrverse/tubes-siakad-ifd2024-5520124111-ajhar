@@ -2,8 +2,33 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+
+
+
     <form method="POST" action="{{ route('login') }}">
         @csrf
+
+         <div class="text-center mb-8">
+                <div class="flex justify-center mb-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-slate-900" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                        <path d="M4.14 11.18V17c0 2.21 3.52 4 7.86 4s7.86-1.79 7.86-4v-5.82l-7.86 4.29-7.86-4.29z"/>
+                    </svg>
+                </div>
+                <h1 class="text-2xl font-extrabold text-slate-900 tracking-wider">
+                    SIAKAD
+                </h1>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-900">
+                    Selamat Datang
+                </h2>
+                <p class="text-sm text-slate-400 mt-1">
+                    Silakan login untuk melanjutkan
+                </p>
+            </div>
+
 
         <!-- Email Address -->
         <div>
