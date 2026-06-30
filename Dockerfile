@@ -1,4 +1,10 @@
-FROM webdevops/php-nginx:8.4
+FROM php:8.4-cli
+
+RUN apt-get update && apt-get install -y \
+    git unzip libzip-dev libicu-dev \
+    && docker-php-ext-install pdo_mysql zip
+
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
@@ -12,7 +18,8 @@ RUN mkdir -p storage/framework/cache \
     storage/logs \
     bootstrap/cache
 
-RUN chown -R application:application storage bootstrap/cache
 RUN chmod -R 775 storage bootstrap/cache
 
-ENV WEB_DOCUMENT_ROOT=/app/public
+EXPOSE 8080
+
+CMD php artisan serve --host=0.0.0.0 --port=${PORT:-8080}
