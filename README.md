@@ -1,58 +1,245 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistem Informasi Akademik (SIAKAD)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Deskripsi Singkat
 
-## About Laravel
+Sistem Informasi Akademik (SIAKAD) merupakan aplikasi berbasis web yang dikembangkan menggunakan **Laravel 13** dan **MySQL**. Aplikasi ini digunakan untuk membantu pengelolaan data akademik di perguruan tinggi, seperti data dosen, mahasiswa, mata kuliah, jadwal perkuliahan, serta pengambilan Kartu Rencana Studi (KRS) oleh mahasiswa.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Aplikasi menerapkan **Role Based Access Control (RBAC)** menggunakan package **Spatie Laravel Permission**, sehingga setiap pengguna memiliki hak akses sesuai dengan perannya, yaitu **Administrator** dan **Mahasiswa**.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# Teknologi yang Digunakan
 
-## Learning Laravel
+- Laravel 13
+- PHP 8
+- MySQL
+- Tailwind CSS
+- Laravel Breeze
+- Spatie Laravel Permission
+- Railway (Deployment)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# Fitur Aplikasi
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### Administrator
 
-## Agentic Development
+- Login
+- Dashboard Admin
+- CRUD Data Dosen
+- CRUD Data Mahasiswa
+- CRUD Data Mata Kuliah
+- CRUD Data Jadwal
+- Kelola Profil
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Mahasiswa
 
-```bash
-composer require laravel/boost --dev
+- Login
+- Dashboard Mahasiswa
+- Melihat Jadwal Perkuliahan
+- Mengambil Mata Kuliah (KRS)
+- Menghapus Mata Kuliah dari KRS
+- Melihat Profil
 
-php artisan boost:install
+---
+
+# Penjelasan Singkat Masing-masing Halaman
+
+## 1. Login
+
+Halaman autentikasi pengguna. Pengguna masuk ke sistem menggunakan email dan password sesuai dengan role masing-masing.
+
+---
+
+## 2. Dashboard Administrator
+
+Menampilkan informasi ringkas mengenai:
+
+- Jumlah Dosen
+- Jumlah Mahasiswa
+- Jumlah Mata Kuliah
+- Jumlah Jadwal
+
+Dashboard digunakan sebagai halaman utama administrator.
+
+---
+
+## 3. Data Dosen
+
+Halaman untuk mengelola data dosen.
+
+Fitur:
+
+- Menambah dosen
+- Mengubah data dosen
+- Menghapus dosen
+- Melihat daftar dosen
+
+---
+
+## 4. Data Mahasiswa
+
+Halaman untuk mengelola data mahasiswa.
+
+Fitur:
+
+- Menambah mahasiswa
+- Mengubah data mahasiswa
+- Menghapus mahasiswa
+- Melihat daftar mahasiswa
+
+---
+
+## 5. Data Mata Kuliah
+
+Halaman untuk mengelola data mata kuliah.
+
+Fitur:
+
+- Menambah mata kuliah
+- Mengubah mata kuliah
+- Menghapus mata kuliah
+- Melihat daftar mata kuliah
+
+---
+
+## 6. Data Jadwal
+
+Halaman yang digunakan administrator untuk mengatur jadwal perkuliahan.
+
+Fitur:
+
+- Menambah jadwal
+- Mengubah jadwal
+- Menghapus jadwal
+- Melihat seluruh jadwal
+
+---
+
+## 7. Dashboard Mahasiswa
+
+Halaman utama mahasiswa yang menampilkan:
+
+- Informasi mahasiswa
+- Jumlah mata kuliah yang telah diambil
+- Jumlah jadwal
+- Jadwal perkuliahan hari ini
+- Menu cepat menuju halaman KRS dan Jadwal
+
+---
+
+## 8. Kartu Rencana Studi (KRS)
+
+Mahasiswa dapat memilih mata kuliah yang akan diambil.
+
+Fitur:
+
+- Mengambil mata kuliah
+- Menghapus mata kuliah yang telah dipilih
+- Melihat daftar KRS
+
+---
+
+## 9. Jadwal Perkuliahan
+
+Mahasiswa hanya dapat melihat jadwal perkuliahan yang telah dibuat oleh administrator tanpa memiliki hak untuk mengubah data.
+
+---
+
+## 10. Profil
+
+Halaman yang digunakan pengguna untuk:
+
+- Mengubah nama
+- Mengubah email
+- Mengubah password
+
+---
+
+# Akun Pengguna
+
+## Administrator
+
+**Email**
+
+```
+admin@siakad.com
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+**Password**
 
-## Contributing
+```
+password
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## Mahasiswa 1
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**Email**
 
-## Security Vulnerabilities
+```
+ahmad@mail.com
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**Password**
 
-## License
+```
+password
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## Mahasiswa 2
+
+**Email**
+
+```
+budi@mail.com
+```
+
+**Password**
+
+```
+password
+```
+
+---
+
+## Mahasiswa 3
+
+**Email**
+
+```
+siti@mail.com
+```
+
+**Password**
+
+```
+password
+```
+
+---
+
+# Demo Aplikasi
+
+https://siakad-5520124111-production.up.railway.app/
+
+---
+
+# Repository GitHub
+
+https://github.com/ajhrverse/tubes-siakad-ifd2024-5520124111-ajhar
+
+---
+
+# Pengembang
+
+**Nama :** M. Permata Ajhar
+
+**NIM :** 5520124111
+
+**Mata Kuliah :** IFD2024 - Pemrograman Web
+
+**Universitas :** Universitas Suryakancana
