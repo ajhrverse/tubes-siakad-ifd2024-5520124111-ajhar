@@ -2,12 +2,17 @@ FROM webdevops/php-nginx:8.4
 
 WORKDIR /app
 
-COPY . /app
+COPY . .
 
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install \
+    --no-dev \
+    --optimize-autoloader \
+    --no-interaction
 
-RUN chown -R application:application /app/storage /app/bootstrap/cache
+RUN mkdir -p storage/framework/cache storage/framework/sessions storage/framework/views storage/logs bootstrap/cache
+
+RUN chmod -R 775 storage bootstrap/cache
 
 ENV WEB_DOCUMENT_ROOT=/app/public
 
-EXPOSE 80
+CMD ["supervisord"]
