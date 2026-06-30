@@ -240,6 +240,4 @@ https://github.com/ajhrverse/tubes-siakad-ifd2024-5520124111-ajhar
 
 **NIM :** 5520124111
 
-**Mata Kuliah :** IFD2024 - Pemrograman Web
 
-**Universitas :** Universitas Suryakancana
